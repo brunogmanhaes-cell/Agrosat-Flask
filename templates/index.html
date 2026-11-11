@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AgroSat · Irrigação inteligente</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>AgroSat</h1>
+    <p>Regar, aguardar ou deixar a chuva trabalhar: a decisão com base no solo e na previsão.</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="panel">
+        <h2 id="tit-form">Nova plantação</h2>
+        <label for="f-prod">Produtor</label>
+        <input id="f-prod" placeholder="Nome do produtor">
+        <label for="f-faz">Fazenda ou plantação</label>
+        <input id="f-faz" placeholder="Ex.: Sítio Boa Vista">
+        <div class="row">
+          <div><label for="f-lat">Latitude</label><input id="f-lat" placeholder="-23.5505" inputmode="decimal"></div>
+          <div><label for="f-lon">Longitude</label><input id="f-lon" placeholder="-46.6333" inputmode="decimal"></div>
+        </div>
+        <p id="f-err" class="err" role="alert"></p>
+        <div class="actions">
+          <button class="primary" id="f-salvar">Salvar plantação</button>
+          <button id="f-cancelar" hidden>Cancelar edição</button>
+        </div>
+      </div>
+      <div class="panel"><h2>Plantações</h2><div id="lista"></div></div>
+    </section>
+
+    <section>
+      <div class="panel" id="resultado">
+        <div class="empty">Escolha uma plantação e toque em <b>Gerar recomendação</b>.</div>
+      </div>
+      <div class="panel" id="historico" hidden></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
